@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8"/>
+        <title>Tugas-PAWM</title>
+        <meta name="viewport", content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/index.css"/>
+
+        <!-- Fonts -->
+        <!-- Quicksand -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="title-container">
+                    <p1>
+                        Deco-Think
+                    </p1>
+                </div>
+
+                <div class="nav-container">
+                    <ul>
+                        <li>
+                            <a href="#">Login</a>
+                        </li>
+                        <li>
+                            <a href="#">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <section>
+            <div class="main-content-container">
+                <p>
+                    Start your coding journey here by learning the basics.
+                </p>
+                <button class="redirect-login">
+                    Start you journey
+                </button>
+                <script>
+                    const buttonRedirect = document.querySelector(".redirect-login");
+                    buttonRedirect.addEventListener('click', function LoginPage(){
+                        console.log("saveactuallyworks");
+                    });
+                </script>
+            </div>
+        </section>
+    </body>
+</html>
