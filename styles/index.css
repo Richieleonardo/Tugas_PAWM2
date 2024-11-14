@@ -1,0 +1,37 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    padding: 10px;
+}
+
+.title-container{
+    align-content: center;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-container ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    list-style-type: none;
+    gap:1rem;
+}
+
+.main-content-container{
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.redirect-login{
+    
+}
