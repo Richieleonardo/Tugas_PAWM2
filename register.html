@@ -47,7 +47,7 @@
                 <p>Already have an account? <a href="login.html">Login Here</a></p> 
             </div>   
         </form>
-        
+
         <footer id="footer">
             <p>&copy; 2024, Richie Leonardo 18222071. All Rights Reserved.</p>
         </footer>
@@ -72,6 +72,11 @@
                 if (result.status === "SUCCESS") {
                     // Handle successful login
                     console.log("Registration Successful!", result);
+                    window.location.href = "login.html";
+                    const form1 = document.querySelector("form");
+                    const peh = document.createElement("p");
+                    peh.stye.color = white;
+                    form1.appendChild(peh);
                 } 
                 else {
                     // Handle errors or failed login
