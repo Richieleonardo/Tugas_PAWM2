@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Deco-Think</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/index.css"/>
+        <!-- FONTS -->
+        <!-- Quicksand -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <div class="title-container">
+                    <p1>
+                        Deco-Think
+                    </p1>
+                </div>
+
+                <div class="nav-container">
+                    <ul>
+                        <li>
+                            <a href="login.html">Login</a>
+                        </li>
+                        <li>
+                            <a href="#">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <form action="/user/register" method="post">  
+            <div class="container">  
+                <label>
+                    Username : 
+                </label>   
+                <input type="text" placeholder="Enter Username" name="name" required/>   
+                <label>
+                    Email : 
+                </label>   
+                <input type="text" placeholder="Enter Email" name="email" required/>  
+                <label>
+                    Password : 
+                </label>   
+                <input type="password" placeholder="Enter Password" name="password" required/>
+                <div class="button-container">
+                    <button type="submit">
+                        Login
+                    </button>    
+                    <button type="button" class="cancelbtn"> 
+                        Cancel
+                    </button>  
+                </div> 
+                <p>Already have an account? <a href="login.html">Login Here</a></p> 
+            </div>   
+        </form>
+        <script>
+            async function handlesubmit(event){
+                event.preventDefault();
+
+                const data = new FormData(event.target);
+
+                const name = data.get('name');
+                const email = data.get('email');
+                const password = data.get('password');
+                
+                const response = await fetch('/user/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                    body: JSON.stringify({name, email, password}),
+                });
+                const result = await response.json();
+                if (result.status === "SUCCESS") {
+                    // Handle successful login
+                    console.log("Registration Successful!", result);
+                } 
+                else {
+                    // Handle errors or failed login
+                    console.error("Registration Failed:", result.message);
+                }
+            }
+            const form = document.querySelector('form');
+            form.addEventListener('submit', handlesubmit);
+        </script>  
+    </body>
+</html>

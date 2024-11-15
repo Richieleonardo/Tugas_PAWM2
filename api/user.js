@@ -7,6 +7,7 @@ const User = require('../model/user');
 //Password encrypt
 const bcrypt = require('bcrypt');
 const { kMaxLength } = require('buffer');
+const { NONAME } = require('dns/promises');
 
 //login
 router.post('/register', (req, res) => {
@@ -139,6 +140,34 @@ router.post('/login', (req, res) => {
                 message: "Error occured while checking for existing user"
             })
         })
+    }
+});
+
+//UPDATE
+router.put("/:id/level", async (req, res) => {
+    const { id } = req.params;
+    const { level } = req.body;
+  
+    // Check if level is valid
+    if (typeof level !== 'number') {
+      return res.status(400).send({ error: 'Level must be a number.' });
+    }
+  
+    try {
+      const user = await User.findOneAndUpdate(
+        { _id: id },
+        { level },
+        { new: true } // Return the updated document
+      );
+  
+      if (!user) {
+        return res.status(404).send({ error: 'User not found' });
+      }
+  
+      res.send({ message: 'Level updated successfully', user });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ error: 'Server error' });
     }
 });
 
