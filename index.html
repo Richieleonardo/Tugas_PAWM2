@@ -4,7 +4,7 @@
         <meta charset="UTF-8"/>
         <title>Tugas-PAWM</title>
         <meta name="viewport", content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="/index.css"/>
+        <link rel="stylesheet" href="styles/index.css"/>
 
         <!-- Fonts -->
         <!-- Quicksand -->
@@ -13,41 +13,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <nav class="nav-bar">
-                <div class="title-container">
-                    <p1>
-                        Deco-Think
-                    </p1>
-                </div>
-
-                <div class="nav-container">
-                    <ul>
-                        <li>
-                            <a href="login.html">Login</a>
-                        </li>
-                        <li>
-                            <a href="register.html">Register</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-        </header>
         <section>
-            <div class="main-content-container">
-                <p>
-                    Start your coding journey here by learning the basics.
-                </p>
-                <button class="redirect-login">
-                    Start you journey
-                </button>
-                <script>
-                    const buttonRedirect = document.querySelector(".redirect-login");
-                    buttonRedirect.addEventListener('click', function LoginPage(){
-                        console.log("saveactuallyworks");
-                    });
-                </script>
+            <div class="main-container">
+                <div class="title-container">
+                    <h1>
+                        Deco-Think
+                    </h1>
+                </div>
+                <div class="content-container">
+                    <p>
+                        Start your coding journey here.
+                    </p>
+                    <div class="nav-container">
+                        <ul>
+                            <li>
+                                <a href="login.html">Login</a>
+                            </li>
+                            <li>
+                                <a href="register.html">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </body>
