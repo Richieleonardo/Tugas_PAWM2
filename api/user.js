@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 const { kMaxLength } = require('buffer');
 const { NONAME } = require('dns/promises');
 
-//login
+//register
 router.post('/register', (req, res) => {
     let {name, email, password} = req.body;
     name = name.trim();
@@ -84,7 +84,7 @@ router.post('/register', (req, res) => {
     }
 });
 
-//register
+//login
 router.post('/login', (req, res) => {
     let {email, password} = req.body;
     email = email.trim();
@@ -143,7 +143,7 @@ router.post('/login', (req, res) => {
     }
 });
 
-//UPDATE
+//Update
 router.put("/:id/level", async (req, res) => {
     const { id } = req.params;
     const { level } = req.body;
