@@ -71,6 +71,14 @@
                     localStorage.setItem('username', result.data[0].name);
                     localStorage.setItem('level', result.data[0].level);
 
+                    const login_con = document.querySelector(".login-container");
+                    const p = document.createElement("p");
+                    p.className = "successful";
+                    p.innerText = "Login Successful";
+                    login_con.appendChild(p);
+                    p.style.color = "pink";
+                    p.style.fontWeight = "bold";
+
                     window.location.href = "game.html";
                 } 
                 else {

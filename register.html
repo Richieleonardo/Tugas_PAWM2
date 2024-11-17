@@ -73,10 +73,14 @@
                     // Handle successful login
                     console.log("Registration Successful!", result);
                     window.location.href = "login.html";
-                    const form1 = document.querySelector("form");
-                    const peh = document.createElement("p");
-                    peh.stye.color = white;
-                    form1.appendChild(peh);
+
+                    const register_con = document.querySelector(".register-container");
+                    const p = document.createElement("p");
+                    p.className = "successful";
+                    p.innerText = "Registration Successful";
+                    register_con.appendChild(p);
+                    p.style.color = "pink";
+                    p.style.fontWeight = "bold";
                 } 
                 else {
                     // Handle errors or failed login
